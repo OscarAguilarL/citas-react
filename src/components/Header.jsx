@@ -1,5 +1,8 @@
 export function Header() {
   return (
-    <div>Header</div>
+    <div>
+      <h1>Desde Header</h1>
+      <p>hola mundo</p>
+    </div>
   )
 }
