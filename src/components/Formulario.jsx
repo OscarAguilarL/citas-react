@@ -1,5 +1,7 @@
 export const Formulario = () => {
   return (
-    <div>Formulario</div>
+    <div className="bg-lime-400">
+      <h2>Formulario</h2>
+    </div>
   )
 }
