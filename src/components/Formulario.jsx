@@ -1,9 +1,5 @@
-import React from 'react'
-
-const Formulario = () => {
+export const Formulario = () => {
   return (
     <div>Formulario</div>
   )
 }
-
-export default Formulario
