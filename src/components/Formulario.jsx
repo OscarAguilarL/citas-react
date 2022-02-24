@@ -9,7 +9,13 @@ export const Formulario = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(e)
+
+    // Validación del formulario
+    if ([nombre, propietario, email, fecha, sintomas].includes('')) {
+      console.log('Hay al menos un campo vacío')
+    } else {
+      console.log('Todos llenos')
+    }
   }
 
   return (
@@ -25,6 +31,7 @@ export const Formulario = () => {
 
       <form
         onSubmit={handleSubmit}
+        noValidate
         className="bg-white shadow-md rounded-lg py-10 px-5 mb-16"
       >
         <div className="mb-5">
