@@ -10,8 +10,8 @@ export const Formulario = () => {
         <span className="text-indigo-600 font-bold">administralos</span>
       </p>
 
-      <form className="bg-white shadow-md rounded-lg py-10 px-5">
-        <div>
+      <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-16">
+        <div className="mb-5">
           <label
             htmlFor="name"
             className="block text-gray-700 uppercase font-bold"
@@ -26,6 +26,71 @@ export const Formulario = () => {
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
           />
         </div>
+        <div className="mb-5">
+          <label
+            htmlFor="namePropietario"
+            className="block text-gray-700 uppercase font-bold"
+          >
+            Nombre propietario
+          </label>
+          <input
+            type="text"
+            id="namePropietario"
+            htmlFor="namePropietario"
+            placeholder="Nombre del dueño"
+            className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
+          />
+        </div>
+        <div className="mb-5">
+          <label
+            htmlFor="email"
+            className="block text-gray-700 uppercase font-bold"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            htmlFor="email"
+            placeholder="Correo electronico"
+            className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
+          />
+        </div>
+        <div className="mb-5">
+          <label
+            htmlFor="alta"
+            className="block text-gray-700 uppercase font-bold"
+          >
+            Alta
+          </label>
+          <input
+            type="date"
+            id="alta"
+            htmlFor="alta"
+            placeholder="Correo electronico"
+            className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
+          />
+        </div>
+        <div className="mb-5">
+          <label
+            htmlFor="sintomas"
+            className="block text-gray-700 uppercase font-bold"
+          >
+            Síntomas
+          </label>
+          <textarea
+            name="sintomas"
+            id="sintomas"
+            placeholder="Describe los sintomas"
+            className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
+          ></textarea>
+        </div>
+
+        <input
+          type="submit"
+          value="Agregar paciente"
+          className="bg-indigo-600 p-3 text-white uppercase font-bold rounded-xl hover:bg-indigo-700 cursor-pointer transition-colors duration-300"
+        />
       </form>
     </div>
   )
