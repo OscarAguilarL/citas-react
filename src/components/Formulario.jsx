@@ -1,4 +1,10 @@
+import { useState } from 'react'
+
 export const Formulario = () => {
+  const [nombre, setNombre] = useState('')
+
+  console.log(nombre)
+
   return (
     <div className="md:w-1/2 lg:w-2/5 mx-20">
       <h2 className="font-black text-3xl text-center">
@@ -13,30 +19,32 @@ export const Formulario = () => {
       <form className="bg-white shadow-md rounded-lg py-10 px-5 mb-16">
         <div className="mb-5">
           <label
-            htmlFor="name"
+            htmlFor="mascota"
             className="block text-gray-700 uppercase font-bold"
           >
             Nombre mascota
           </label>
           <input
             type="text"
-            id="name"
-            htmlFor="name"
+            id="mascota"
+            htmlFor="mascota"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
             placeholder="Nombre de la mascota"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
           />
         </div>
         <div className="mb-5">
           <label
-            htmlFor="namePropietario"
+            htmlFor="propietario"
             className="block text-gray-700 uppercase font-bold"
           >
             Nombre propietario
           </label>
           <input
             type="text"
-            id="namePropietario"
-            htmlFor="namePropietario"
+            id="propietario"
+            htmlFor="propietario"
             placeholder="Nombre del dueño"
             className="border-2 w-full p-2 mt-2 rounded-md placeholder-gray-400"
           />
