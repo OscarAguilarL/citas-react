@@ -7,15 +7,20 @@ export const Formulario = () => {
   const [fecha, setFecha] = useState('')
   const [sintomas, setSintomas] = useState('')
 
+  const [error, setError] = useState(false)
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
     // Validación del formulario
     if ([nombre, propietario, email, fecha, sintomas].includes('')) {
       console.log('Hay al menos un campo vacío')
-    } else {
-      console.log('Todos llenos')
+      setError(true)
+      return
     }
+
+    setError(false)
+    return
   }
 
   return (
@@ -34,6 +39,11 @@ export const Formulario = () => {
         noValidate
         className="bg-white shadow-md rounded-lg py-10 px-5 mb-16"
       >
+        {error && (
+          <div className="bg-red-700 text-white text-center p-3 uppercase font-bold mb-3 rounded-lg">
+            <p>Todos los campos son obligatorios</p>
+          </div>
+        )}
         <div className="mb-5">
           <label
             htmlFor="mascota"
@@ -122,7 +132,7 @@ export const Formulario = () => {
         <input
           type="submit"
           value="Agregar paciente"
-          className="bg-indigo-600 p-3 text-white uppercase font-bold rounded-xl hover:bg-indigo-700 cursor-pointer transition-colors duration-300"
+          className="bg-indigo-600 p-3 text-white uppercase font-bold rounded-xl hover:bg-indigo-700 cursor-pointer transition-colors duration-300 w-full"
         />
       </form>
     </div>
