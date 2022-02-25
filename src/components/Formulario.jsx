@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { generarId } from '../utils/generarId'
 
 import { Error } from './Error'
 
@@ -23,7 +24,7 @@ export const Formulario = ({ setPacientes }) => {
 
     setPacientes((state) => [
       ...state,
-      { nombre, propietario, email, fecha, sintomas },
+      { id: generarId(), nombre, propietario, email, fecha, sintomas },
     ])
 
     setNombre('')

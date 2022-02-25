@@ -10,7 +10,7 @@ export const ListadoPacientes = ({ pacientes = [] }) => {
       </p>
 
       {pacientes.map((el) => (
-        <Paciente paciente={el} key={el.nombre} />
+        <Paciente paciente={el} key={el.id} />
       ))}
     </div>
   )
