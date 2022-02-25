@@ -44,7 +44,7 @@ export const Formulario = ({ setPacientes }) => {
       </h2>
 
       <p className="text-lg mt-5 text-center mb-10">
-        Añadir pacientes y{' '}
+        Añade pacientes y{' '}
         <span className="text-indigo-600 font-bold">administralos</span>
       </p>
 
