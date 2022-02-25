@@ -21,6 +21,21 @@ export const Paciente = ({ paciente }) => {
       <p className="font-bold mb-3 text-gray-700 uppercase">
         Sintomas: <span className="font-normal normal-case">{sintomas}</span>
       </p>
+
+      <div className="flex gap-4 mt-8">
+        <button
+          type="button"
+          className="py-2 px-10 bg-indigo-600 hover:bg-indigo-700 text-white font-bold uppercase rounded-lg transition-colors duration-300"
+        >
+          Editar
+        </button>
+        <button
+          type="button"
+          className="py-2 px-10 bg-red-600 hover:bg-red-700 text-white font-bold uppercase rounded-lg transition-colors duration-300"
+        >
+          Eliminar
+        </button>
+      </div>
     </div>
   )
 }
