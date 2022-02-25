@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import { Error } from './Error'
+
 export const Formulario = ({ setPacientes }) => {
   const [nombre, setNombre] = useState('')
   const [propietario, setPropietario] = useState('')
@@ -50,11 +52,8 @@ export const Formulario = ({ setPacientes }) => {
         noValidate
         className="bg-white shadow-md rounded-lg py-10 px-5 mb-16"
       >
-        {error && (
-          <div className="bg-red-700 text-white text-center p-3 uppercase font-bold mb-3 rounded-lg">
-            <p>Todos los campos son obligatorios</p>
-          </div>
-        )}
+        {error && <Error mensaje="Todos los campos son obligatorios" />}
+
         <div className="mb-5">
           <label
             htmlFor="mascota"
