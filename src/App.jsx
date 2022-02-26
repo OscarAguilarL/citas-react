@@ -9,7 +9,7 @@ function App() {
     <div className="container mx-auto mt-5">
       <Header />
       <div className="mt-12 md:flex">
-        <Formulario  setPacientes={setPacientes} />
+        <Formulario  setPacientes={setPacientes} paciente={paciente} />
         <ListadoPacientes pacientes={pacientes} setPaciente={setPaciente} />
       </div>
     </div>

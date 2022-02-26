@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { generarId } from '../utils/generarId'
 
 import { Error } from './Error'
 
-export const Formulario = ({ setPacientes }) => {
+export const Formulario = ({ setPacientes, paciente }) => {
   const [nombre, setNombre] = useState('')
   const [propietario, setPropietario] = useState('')
   const [email, setEmail] = useState('')
@@ -11,6 +11,10 @@ export const Formulario = ({ setPacientes }) => {
   const [sintomas, setSintomas] = useState('')
 
   const [error, setError] = useState(false)
+
+  useEffect(() => {
+    console.log(paciente)
+  }, [paciente])
 
   const handleSubmit = (e) => {
     e.preventDefault()
