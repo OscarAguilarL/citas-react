@@ -3,7 +3,7 @@ import { generarId } from '../utils/generarId'
 
 import { Error } from './Error'
 
-export const Formulario = ({ setPacientes, paciente }) => {
+export const Formulario = ({ setPacientes, paciente, setPaciente }) => {
   const [nombre, setNombre] = useState('')
   const [propietario, setPropietario] = useState('')
   const [email, setEmail] = useState('')
@@ -14,7 +14,6 @@ export const Formulario = ({ setPacientes, paciente }) => {
 
   useEffect(() => {
     if (Object.keys(paciente).length > 0) {
-      console.log(paciente)
       setNombre(paciente.nombre)
       setPropietario(paciente.propietario)
       setEmail(paciente.email)
@@ -33,10 +32,31 @@ export const Formulario = ({ setPacientes, paciente }) => {
       return
     }
 
-    setPacientes((state) => [
-      ...state,
-      { id: generarId(), nombre, propietario, email, fecha, sintomas },
-    ])
+    const objetoPaciente = {
+      nombre,
+      propietario,
+      email,
+      fecha,
+      sintomas,
+    }
+
+    if (paciente.id) {
+      // editando registro
+      objetoPaciente.id = paciente.id
+
+      setPacientes((pacientes) =>
+        pacientes.map((pacienteState) =>
+          pacienteState.id === paciente.id ? objetoPaciente : pacienteState
+        )
+      )
+      setPaciente({})
+    } else {
+      // guardando nuevo registro
+      setPacientes((state) => [
+        ...state,
+        { ...objetoPaciente, id: generarId() },
+      ])
+    }
 
     setNombre('')
     setPropietario('')
@@ -157,9 +177,10 @@ export const Formulario = ({ setPacientes, paciente }) => {
 
         <input
           type="submit"
-          value="Agregar paciente"
+          value={paciente.id ? 'Guardar cambios' : 'Añadir paciente'}
           className="bg-indigo-600 p-3 text-white uppercase font-bold rounded-xl hover:bg-indigo-700 cursor-pointer transition-colors duration-300 w-full"
         />
+        {paciente.id && <input type="button" value="Cancelar" />}
       </form>
     </div>
   )
