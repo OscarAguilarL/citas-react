@@ -180,7 +180,21 @@ export const Formulario = ({ setPacientes, paciente, setPaciente }) => {
           value={paciente.id ? 'Guardar cambios' : 'Añadir paciente'}
           className="bg-indigo-600 p-3 text-white uppercase font-bold rounded-xl hover:bg-indigo-700 cursor-pointer transition-colors duration-300 w-full"
         />
-        {paciente.id && <input type="button" value="Cancelar" />}
+        {paciente.id && (
+          <input
+            type="button"
+            value="Cancelar"
+            className="bg-orange-600 mt-3 p-3 text-white uppercase font-bold rounded-xl hover:bg-orange-700 cursor-pointer transition-colors duration-300 w-full"
+            onClick={() => {
+              setPaciente({})
+              setNombre('')
+              setPropietario('')
+              setEmail('')
+              setFecha('')
+              setSintomas('')
+            }}
+          />
+        )}
       </form>
     </div>
   )
