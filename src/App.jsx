@@ -6,7 +6,11 @@ function App() {
   const [paciente, setPaciente] = useState({})
 
   const eliminarPaciente = (id) => {
-    console.log('eliminando paciente', id)
+    const pacientesActualizados = pacientes.filter(
+      (pacienteState) => pacienteState.id !== id
+    )
+
+    setPacientes(pacientesActualizados)
   }
 
   return (
